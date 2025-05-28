@@ -9,22 +9,22 @@ system ? builtins.currentSystem
 }:
 let
   shaMap = {
-    x86_64-linux = "036z954r11z26l6lsm7p9310ny4xcnlqf89c0vbxn6agbh1gnnp4";
-    aarch64-linux = "0dk4xgw7sb5xp0qhvmgg5wqxmrw9fcan51bn968phds1vcbcw9y3";
-    x86_64-darwin = "0l86kxs3wx23p7p1gbvs19slirb1dhh7cg3f8qmjr210gx8c4077";
-    aarch64-darwin = "02kb8yaiwa8ycqac4v42zflhb3y0ybqxj9rpazqgcwrsqb93gqh3";
+    x86_64-linux = "03cirsvs13i8prcaxsj7771i5dk04cwaazvc1c50lnxiy0kngwrm";
+    aarch64-linux = "0y5hhz5y7yy07zca0zqis0hv6zr0i8k630hg5vqamfvkmn5midhl";
+    x86_64-darwin = "1hg8k1wry18cc3im9xwzjh9c49iydpckci63agdh63wj4s54ai42";
+    aarch64-darwin = "089vzjh51nvw0sagmdy7pxiz2gr4l0aaizpibisg0jmfvxk9mykn";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/nais/cli/releases/download/2.0.0-202505281318/nais-cli_2.0.0-202505281318_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/nais/cli/releases/download/2.0.0-202505281318/nais-cli_2.0.0-202505281318_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/nais/cli/releases/download/2.0.0-202505281318/nais-cli_2.0.0-202505281318_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/nais/cli/releases/download/2.0.0-202505281318/nais-cli_2.0.0-202505281318_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/nais/cli/releases/download/2.0.0-202505281341/nais-cli_2.0.0-202505281341_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/nais/cli/releases/download/2.0.0-202505281341/nais-cli_2.0.0-202505281341_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/nais/cli/releases/download/2.0.0-202505281341/nais-cli_2.0.0-202505281341_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/nais/cli/releases/download/2.0.0-202505281341/nais-cli_2.0.0-202505281341_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "nais-cli";
-  version = "2.0.0-202505281318";
+  version = "2.0.0-202505281341";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
@@ -36,7 +36,7 @@ stdenvNoCC.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/bin
-    cp -vr ./bin/nais $out/bin/nais
+    cp -vr ./nais $out/bin/nais
   '';
   postInstall = ''
     installShellCompletion ./completions/*
