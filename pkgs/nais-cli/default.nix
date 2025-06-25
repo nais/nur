@@ -8,22 +8,22 @@
   stdenvNoCC,
 }: let
   shaMap = {
-    x86_64-linux = "1k5x6hl2781mcwq5c1akczjyf5cqzfjil3bwswxpihcsdbmvd701";
-    aarch64-linux = "1vxr7xj9w55vhr0jg6wxr0p0nmmdyr0b5ca4af3f16zlhwd7jari";
-    x86_64-darwin = "0y5c70laaq0wxasay4g7sny994gdqjwsaax6p1222q1qdj3170ap";
-    aarch64-darwin = "061myjm97riz0xjv5xgjgfikc5xbz9kmj0v39dzis83mzy4f09l1";
+    x86_64-linux = "16lzc7h8vyrffglkckwjp9a28vxfwvpqfar62gs5dgwzbwkck7sc";
+    aarch64-linux = "12a66j4djil3hlmymi1nccyzpxrl1rs3jnxyc7ksn7cjaxswxmvg";
+    x86_64-darwin = "0xabxwf8ikfjffbzj2dnnnyjssmlnljdzh08f36yd640ncwaq582";
+    aarch64-darwin = "1il4a32qyriz6i5xyypb09zh8pb2v3d4d7gswhacj8x03v2zyn8d";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/nais/cli/releases/download/v2.0.0-20250624151020-a8767822b069/nais-cli_v2.0.0-20250624151020-a8767822b069_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/nais/cli/releases/download/v2.0.0-20250624151020-a8767822b069/nais-cli_v2.0.0-20250624151020-a8767822b069_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/nais/cli/releases/download/v2.0.0-20250624151020-a8767822b069/nais-cli_v2.0.0-20250624151020-a8767822b069_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/nais/cli/releases/download/v2.0.0-20250624151020-a8767822b069/nais-cli_v2.0.0-20250624151020-a8767822b069_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/nais/cli/releases/download/v2.0.0-20250625100130-d1178f7d79a5/nais-cli_v2.0.0-20250625100130-d1178f7d79a5_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/nais/cli/releases/download/v2.0.0-20250625100130-d1178f7d79a5/nais-cli_v2.0.0-20250625100130-d1178f7d79a5_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/nais/cli/releases/download/v2.0.0-20250625100130-d1178f7d79a5/nais-cli_v2.0.0-20250625100130-d1178f7d79a5_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/nais/cli/releases/download/v2.0.0-20250625100130-d1178f7d79a5/nais-cli_v2.0.0-20250625100130-d1178f7d79a5_darwin_arm64.tar.gz";
   };
 in
   stdenvNoCC.mkDerivation {
     pname = "nais-cli";
-    version = "v2.0.0-20250624151020-a8767822b069";
+    version = "v2.0.0-20250625100130-d1178f7d79a5";
     src = fetchurl {
       url = urlMap.${system};
       sha256 = shaMap.${system};
