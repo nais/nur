@@ -12,6 +12,7 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   nais-cli = pkgs.callPackage ./pkgs/nais-cli {};
+  narc-cli = pkgs.callPackage ./pkgs/narc-cli {};
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
