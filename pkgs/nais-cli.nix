@@ -23,7 +23,7 @@
 in
   stdenvNoCC.mkDerivation {
     pname = "nais-cli";
-    version = "v3.2.8";
+    version = "v3.2.9";
     src = fetchurl {
       url = urlMap.${system};
       sha256 = shaMap.${system};
