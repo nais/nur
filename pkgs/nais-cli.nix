@@ -8,22 +8,22 @@
   stdenvNoCC,
 }: let
   shaMap = {
-    x86_64-linux = "E8F5DF284FDE2051F603D0903806A33D1FFEBD9FCD8918DFBF2AB898A73E575F";
-    aarch64-linux = "1249407FD3FD7F374C47D5478BB75D53824E0D8E6C17B6635F43AD02B934A569";
-    x86_64-darwin = "F9CC320828F671B632B5173789887AF12C5FDC9AEE4EB22DABF7A0B7DCA9C222";
-    aarch64-darwin = "466B6B5EA37788A0E2B6F01C849B3D58093787C8CA1A9DC9917B20951B95E4FD";
+    x86_64-linux = "C8FB6CCB708944B27BE4F0267EC10E4AFE0B6C8F7C59AA1FA519D24C8AC8A3BB";
+    aarch64-linux = "01C78C43BB9BF14F42EEBA7BE8F08B16A56CACD51720D2912DF9CBE71611FE81";
+    x86_64-darwin = "C58B77E6059AA8A26075CF154DA736EAFF1272766F88C631237F20162CCE8AC9";
+    aarch64-darwin = "41CF1E865A906B21A361F8D64EECBE8B5DA8C442FDD66160861FC8A806A7FEBE";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/nais/cli/releases/download/v3.7.0/nais-cli_linux_amd64.tgz";
-    aarch64-linux = "https://github.com/nais/cli/releases/download/v3.7.0/nais-cli_linux_arm64.tgz";
-    x86_64-darwin = "https://github.com/nais/cli/releases/download/v3.7.0/nais-cli_darwin_amd64.tgz";
-    aarch64-darwin = "https://github.com/nais/cli/releases/download/v3.7.0/nais-cli_darwin_arm64.tgz";
+    x86_64-linux = "https://github.com/nais/cli/releases/download/v3.8.0/nais-cli_linux_amd64.tgz";
+    aarch64-linux = "https://github.com/nais/cli/releases/download/v3.8.0/nais-cli_linux_arm64.tgz";
+    x86_64-darwin = "https://github.com/nais/cli/releases/download/v3.8.0/nais-cli_darwin_amd64.tgz";
+    aarch64-darwin = "https://github.com/nais/cli/releases/download/v3.8.0/nais-cli_darwin_arm64.tgz";
   };
 in
   stdenvNoCC.mkDerivation {
     pname = "nais-cli";
-    version = "v3.7.0";
+    version = "v3.8.0";
     src = fetchurl {
       url = urlMap.${system};
       sha256 = shaMap.${system};
