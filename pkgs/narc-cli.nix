@@ -8,22 +8,22 @@
   stdenvNoCC,
 }: let
   shaMap = {
-    x86_64-linux = "FCE07C9071449201F3639C2D6775ACD8C0450F01303FF7EC6050E3C1D4353FA6";
-    aarch64-linux = "BF17195A8EFEE4F902DB189BA9E4B232104246D29427E16161E98013B8540F8B";
-    x86_64-darwin = "B6950D03519498FEAEC34677288EE073866769BDF0F8EF9D9BA66BD0C4C323F0";
-    aarch64-darwin = "ECD34646E7D1569E7B670F3D2F1AE8B88649E74DA2636E5F802EF6CED0274A71";
+    x86_64-linux = "B9D79210205501BB229B8C1C4A12B914C5068B99BABE4C768DC7EDB278ADF11F";
+    aarch64-linux = "A57BF65F46618E7FE71562C47331A3B8577CE2B1C08AB30EB5F272DE86B731B3";
+    x86_64-darwin = "9AD0A0ABB875EE7236BB01436CA75DC44D1DDC24CF5F548DEE058D40207433B6";
+    aarch64-darwin = "A4956E21104CEE07153B60709DC568F92DFE0D0D84192F7C38092E64381929CE";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/nais/narcos/releases/download/v2.5.4/narc-cli_linux_amd64.tgz";
-    aarch64-linux = "https://github.com/nais/narcos/releases/download/v2.5.4/narc-cli_linux_arm64.tgz";
-    x86_64-darwin = "https://github.com/nais/narcos/releases/download/v2.5.4/narc-cli_darwin_amd64.tgz";
-    aarch64-darwin = "https://github.com/nais/narcos/releases/download/v2.5.4/narc-cli_darwin_arm64.tgz";
+    x86_64-linux = "https://github.com/nais/narcos/releases/download/v2.5.5/narc-cli_linux_amd64.tgz";
+    aarch64-linux = "https://github.com/nais/narcos/releases/download/v2.5.5/narc-cli_linux_arm64.tgz";
+    x86_64-darwin = "https://github.com/nais/narcos/releases/download/v2.5.5/narc-cli_darwin_amd64.tgz";
+    aarch64-darwin = "https://github.com/nais/narcos/releases/download/v2.5.5/narc-cli_darwin_arm64.tgz";
   };
 in
   stdenvNoCC.mkDerivation {
     pname = "narc-cli";
-    version = "v2.5.4";
+    version = "v2.5.5";
     src = fetchurl {
       url = urlMap.${system};
       sha256 = shaMap.${system};
